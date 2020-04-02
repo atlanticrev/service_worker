@@ -28,8 +28,8 @@ body {
 
 /* Gradient Button */
 #gradient_button {
-  --width: 50%;
-  --height: calc(var(--width) / 3.33);
+  --width: 80%;
+  --height: 15%;
   --font-size: calc(var(--height) * 12);
 
   width: var(--width);
