@@ -20,3 +20,7 @@ body {
   align-items: center;
   font-family: "Ubuntu", sans-serif;
 }
+
+#app_install {
+  padding: 20px;
+}
