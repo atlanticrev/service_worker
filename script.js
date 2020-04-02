@@ -9,14 +9,21 @@ if ('serviceWorker' in navigator) {
     });
   }
 
-// let deferredPrompt;
-//
-// window.addEventListener('beforeinstallprompt', (e) => {
-//     e.preventDefault();
-//     deferredPrompt = e;
-//     btnAdd.style.display = 'block';
-// });
-//
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+            console.log('user accepted prompt');
+        }
+        deferredPrompt = null;
+    });
+    // btnAdd.style.display = 'block';
+});
+
 // btnAdd.addEventListener('click', (e) => {
 //     deferredPrompt.prompt();
 //     deferredPrompt.userChoice.then((choiceResult) => {
