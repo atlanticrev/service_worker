@@ -19,8 +19,67 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Ubuntu", sans-serif;
+  background-color: black;
 }
 
-#app_install {
-  padding: 20px;
+/*#app_install {*/
+/*  padding: 20px;*/
+/*}*/
+
+/* Gradient Button */
+#gradient_button {
+  --width: 50%;
+  --height: calc(var(--width) / 3.33);
+  --font-size: calc(var(--height) * 12);
+
+  width: var(--width);
+  height: var(--height);
+  position: relative;
+  border-radius: 100px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  color: white;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: var(--font-size);
+  letter-spacing: 1px;
+  z-index: 1;
+  outline: none;
+}
+
+#gradient_button.animate {
+  animation: animate 8s linear infinite;
+}
+
+#gradient_button.animate:before {
+  animation: animate 8s linear infinite;
+  filter: blur(20px);
+  opacity: 1;
+}
+
+#gradient_button:before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  bottom: -5px;
+  right: -5px;
+  z-index: -1;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: inherit;
+  opacity: 0;
+  transition: .5s;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: 400%;
+  }
 }

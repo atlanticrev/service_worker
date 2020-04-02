@@ -7,10 +7,24 @@ if ('serviceWorker' in navigator) {
           console.log('Service worker registration failed', err);
         });
     });
-  }
+}
+
+const btnAdd = document.getElementById('gradient_button');
+const audio = document.getElementById('audio');
+
+let buttonState = false;
+btnAdd.onclick = (e) => {
+    buttonState = !buttonState;
+    if (buttonState) {
+        e.target.classList.add('animate');
+        audio.play();
+    } else {
+        e.target.classList.remove('animate');
+        audio.pause();
+    }
+};
 
 let deferredPrompt;
-let btnAdd = document.getElementById('app_install');
 
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();

@@ -1,4 +1,4 @@
-const cacheName = 'cache-v2';
+const cacheName = 'cache-v3';
 
 const resourcesToPrecache = [
   'index.html',
@@ -14,6 +14,7 @@ self.addEventListener('install', e => {
         return cache.addAll(resourcesToPrecache);
       })
   );
+    console.log('Service worker has been installed');
 });
 
 self.addEventListener('fetch', e => {
