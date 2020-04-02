@@ -1,10 +1,9 @@
 const cacheName = 'cache-v1';
 
 const resourcesToPrecache = [
-  '/',
   'index.html',
   'style.css',
-  'script.js'
+  'script.js',
 ];
 
 self.addEventListener('install', e => {
