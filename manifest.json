@@ -1,7 +1,10 @@
 {
-    "name": "test",
-    "short_name": "test",
+    "name": "Service worker",
+    "short_name": "Service worker",
     "icons": [{
+        "src": "icon.png",
+        "sizes": "512x512",
+        "type": "image/png"
     }],
     "start_url": "/index.html",
     "display": "standalone",
